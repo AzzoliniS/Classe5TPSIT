@@ -1,0 +1,31 @@
+GET http://localhost:3000/api/persone HTTP/1.1
+
+###
+
+GET http://localhost:3000/api/persone/1 HTTP/1.1
+
+###
+
+POST http://localhost:3000/api/persone HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "3",
+    "nome": "francesco",
+    "cognome": "galli"
+}
+
+###
+
+PUT http://localhost:3000/api/persone/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id": "1",
+    "nome": "luigi",
+    "cognome": "bros"
+}
+
+###
+
+DELETE http://localhost:3000/api/persone/3 HTTP/1.1

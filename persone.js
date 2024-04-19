@@ -1,13 +1,13 @@
 const persone = [
     {
-        id: "1",
-        nome: "lisa",
-        cognome: "cognolato"
+        "id": "1",
+        "nome": "lisa",
+        "cognome": "cognolato"
     },
     {
-        id: "2",
-        nome: "alessio",
-        cognome: "giordani"
+        "id": "2",
+        "nome": "alessio",
+        "cognome": "giordani"
     }
 ]
 
