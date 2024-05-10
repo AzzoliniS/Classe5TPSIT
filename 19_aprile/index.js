@@ -1,48 +1,56 @@
-const express = require('express');
+const express = require('express');             //importo il modulo express
 const app = express();
-const {persone} = require('./persone');
+const { persone } = require('./persone');
 
 app.use(express.json())
 
 //---------------------------------------------------------
 
-app.get('/api/persone', (req, res) =>{
+app.get('/api/persone', (req, res) => {
     res.status(200).json(persone);
 })
 
-app.get('/api/persone/:id', (req, res) =>{
-    const {id} = req.params
+app.get('/api/persone/:id', (req, res) => {
+    const { id } = req.params
     const pers = persone.find((pers) => pers.id === id)
     res.json(pers);
 })
 
-app.post('/api/persone', (req, res)=>{
+app.post('/api/persone', (req, res) => {
     console.log(req.body);
 
-    const pers = req.body;
-    persone.push(pers);
-    res.status(200).json({success:true, data: persone})
+    if (req.body) {
+        const pers = req.body;
+        persone.push(pers);
+        res.status(200).json({ success: true, data: persone });
+    } else {
+        res.status(400).send(error);
+    }
 })
 
-app.put('/api/persone/:id', (req, res)=>{
-    const {id} = req.params;
+app.put('/api/persone/:id', (req, res) => {
+    const { id } = req.params;
     const pers = req.body;
 
-    persone[Number(id)-1] = pers;
+    persone[Number(id) - 1] = pers;
 
-    res.status(200).json({success:true, data: persone})
+    res.status(200).json({ success: true, data: persone })
 })
 
-app.delete('/api/persone/:id', (req, res)=>{
-    const {id} = req.params;
+app.delete('/api/persone/:id', (req, res) => {
+    const { id } = req.params;
 
     //cerco l'index della persona con l'id indicato
     const index = persone.findIndex(pers => pers.id === id);
     //elimino un elemento a partire dalla posizione index
-    persone.splice(index, 1);    
+    persone.splice(index, 1);
 
-    res.status(200).json({success:true, data: persone})
+    res.status(200).json({ success: true, data: persone })
 })
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/public/home.html');
+});
 
 
 //---------------------------------------------------------

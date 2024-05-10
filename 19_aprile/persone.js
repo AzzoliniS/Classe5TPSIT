@@ -10,7 +10,7 @@ const persone = [
         "cognome": "giordani"
     },
     {
-        "id": 3,
+        "id": "3",
         "nome": "mario",
         "cognome": "rossi"
     }
