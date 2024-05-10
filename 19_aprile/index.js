@@ -1,4 +1,4 @@
-const express = require('express');             //importo il modulo express
+const express = require('express');
 const app = express();
 const { persone } = require('./persone');
 
