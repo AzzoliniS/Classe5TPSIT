@@ -6,25 +6,25 @@ GET http://localhost:3001/utenti HTTP/1.1
 
 ###
 
-GET http://localhost:3000/utenti/1 HTTP/1.1
+GET http://localhost:3001/utenti/1 HTTP/1.1
 
 ###
 
-POST http://localhost:3000/utenti HTTP/1.1
+POST http://localhost:3001/utenti HTTP/1.1
 Content-Type: application/json
 
 {
-    "nome": "TIzio",
-    "cognome": "Wonka"
+    "nome": "Alessio",
+    "cognome": "Gravante"
 }
 
 ###
 
-DELETE http://localhost:3000/utenti/7 HTTP/1.1
+DELETE http://localhost:3001/utenti/6 HTTP/1.1
 
 ###
 
-PUT http://localhost:3000/utenti/1   HTTP/1.1
+PUT http://localhost:3001/utenti/1   HTTP/1.1
 Content-Type: application/json
 
 {

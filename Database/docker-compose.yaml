@@ -8,6 +8,6 @@ services:                   #mi consente di creare una serie di container e di m
       MYSQL_DATABASE: dbapp
       MYSQL_ROOT_PASSWORD: root
     ports:          
-      - 3308:3308           #porta su cui è accessibile il server mysql
+      - 3306:3306           #porta su cui è accessibile il server mysql
     volumes:
       - ./mysql:/docker-entrypoint-initdb.d #inizializzare il db con i file contenuti nella cartella mysql (ordine alfabetico)
